@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SUPERYOU | Fermented Vegan Protein Bars & Powders</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="icon" type="image/x-icon" href="assets/images/favilogo.ico">
+ <link rel="shortcut icon" type="image/png" href="assets/images/favilogo.png">
+  <meta name="description" content="Discover SUPERYOU’s fermented vegan protein bars and powders. Boost digestion, energy, and wellness with plant-based, biofermented protein. Shop now!">
+   <meta property="og:type" content="website">
+    <meta property="og:title" content="SUPERYOU | Fermented Vegan Protein Bars &amp; Powders">
+    <meta property="og:description" content="Discover SUPERYOU’s fermented vegan protein bars and powders. Boost digestion, energy, and wellness with plant-based, biofermented protein. Shop now!">
+    <meta property="og:image" content="assets/images/favilogo.png">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  
+  <script src="/assets/js/jquery-3.7.1.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="formbgin">
+  <section class="formcoming" id="formsecondin">
+    <a href="index.html"><img src="/assets/images/logosuper.svg" class="img-fluid" /></a>
+    <div class="formmain">
+      <form id="coming-form" method="POST">
+        <h1>Coming Soon</h1>
+        <div class="formboxonein">
+          <div class="formbox">
+            <div class="fromside">
+              <input type="email" class="form-control" placeholder="Enter Email Address" aria-label="Email Id" name="email" id="email" required>
+              <span id="emailError" class="error-message errortext"></span>
+            </div>
+          </div>
+          <div class="mainbtninn">
+            <button type="submit" class="btn whitebtnone">Submit Form</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="thankyou">
+      <p>Thanks for joining SuperYou<br>Stay tuned!</p>
+      <div class="mainbtninn">
+        <button type="submit" onClick="window.location.reload();" class="btn whitebtnone">Go Back</button>
+      </div>
+    </div>
+  </section>
+  
+  <script src="/assets/js/jquery-3.7.1.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    $(document).ready(function () {
+      $('.thankyou').hide();
+      
+      $('#coming-form').on('submit', function (event) {
+        event.preventDefault();  // Prevent default form submission
+
+        var email = $('#email').val().trim();
+        var emailError = $('#emailError');
+
+        // Clear previous errors
+        emailError.text('');
+
+        // Validate email
+        if (!validateEmail(email)) {
+          emailError.text('Please enter a valid email address');
+          return;
+        }
+
+        // Send the email data to the server via AJAX
+        $.ajax({
+          type: 'POST',
+          url: '/send_mail.php',  // Make sure this path is correct
+          data: { email: email },
+          success: function (response) {
+            var jsonResponse = JSON.parse(response);
+            if (jsonResponse.message === 'Email sent successfully to the admin!') {
+              $('.formmain').hide();
+              $('.thankyou').fadeIn();
+            } else {
+              // Display error returned by the server
+              if (jsonResponse.message) {
+                emailError.text(jsonResponse.message);
+              } else {
+                alert('An error occurred. Please try again.');
+              }
+            }
+          },
+          error: function () {
+            alert('Failed to send email. Please try again later.');
+          }
+        });
+      });
+
+      // Email validation function
+      function validateEmail(email) {
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+    });
+  </script>
+</body>
+</html>
