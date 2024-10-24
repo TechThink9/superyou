@@ -72,7 +72,7 @@
         // Send the email data to the server via AJAX
         $.ajax({
           type: 'POST',
-          url: '/send_mail.php',  // Make sure this path is correct
+          url: 'https://superyou.in/send_mail.php',  // Make sure this path is correct
           data: { email: email },
           success: function (response) {
             var jsonResponse = JSON.parse(response);
