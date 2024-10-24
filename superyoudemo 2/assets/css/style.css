@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Helvetica Now Var';
+    src: url('../fonts/HelveticaNowVar.woff2') format('woff2'),
+        url('../fonts/HelveticaNowVar.woff') format('woff'),
+        url('../fonts/HelveticaNowVar.ttf') format('truetype'),
+        url('../fonts/HelveticaNowVar.svg#HelveticaNowVar') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+body,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+body,
+html {
+	height: 100%;
+	font-family: 'Helvetica Now Var';
+}
+
+body {
+	height: 100vh;
+	background: rgb(235, 20, 0);
+}
+
+p {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: #000;
+	font-weight: 400;
+	margin-bottom: 1.5rem;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+.formcoming
+{
+width:100%;
+height: auto;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: 100vh;
+display: flex;
+}
+.formcoming a
+{
+	width: 100%;
+}
+.formbgin
+{
+width:100%;
+}
+
+.formbgin img
+{
+width:100%;
+margin-bottom: 2.5rem;
+}
+.formbgin h1
+{
+	width:100%;
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+	font-size: 45px;
+	margin-bottom: 1.5rem;
+}
+.formboxonein
+{
+	width: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+.formbgin input
+{
+background-color: #f2f2f2;	
+height:40px;
+font-size: 14px;
+}
+.whitebtnone{
+background-color: rgb(255, 255, 255);
+
+width: 100%;
+margin-top:1rem;
+margin-bottom: 1rem;
+height:40px;
+font-size: 14px;
+color: rgb(235, 20, 0);
+border-radius: 8px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 0.706592px 0.706592px -0.625px, rgba(0, 0, 0, 0.145) 0px 1.80656px 1.80656px -1.25px, rgba(0, 0, 0, 0.137) 0px 3.62176px 3.62176px -1.875px, rgba(0, 0, 0, 0.125) 0px 6.8656px 6.8656px -2.5px, rgba(0, 0, 0, 0.106) 0px 13.6468px 13.6468px -3.125px, rgba(0, 0, 0, 0.05) 0px 30px 30px -3.75px;
+opacity: 1;
+will-change: auto;}
+
+.whitebtnone:hover{
+	background-color:#000;
+	height:40px;
+	width: 100%;
+	color:#fff;
+	margin-top: 1rem;
+	border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 0.706592px 0.706592px -0.625px, rgba(0, 0, 0, 0.145) 0px 1.80656px 1.80656px -1.25px, rgba(0, 0, 0, 0.137) 0px 3.62176px 3.62176px -1.875px, rgba(0, 0, 0, 0.125) 0px 6.8656px 6.8656px -2.5px, rgba(0, 0, 0, 0.106) 0px 13.6468px 13.6468px -3.125px, rgba(0, 0, 0, 0.05) 0px 30px 30px -3.75px;
+	opacity: 1;
+	will-change: auto;}
+
+	.thankyou {
+		display: none; /* Hide the thank-you message initially */
+	  }
+
+	  .thankyou
+	  {
+		width:100%;
+		max-width: 445px;
+	  }
+
+	  .thankyou p
+	  {
+		font-size: 2rem;
+		color: #fff;
+		text-align: center;
+		line-height: 2.5rem;
+	  }
+	  
+	  .errortext
+	  {
+	      color:#fff;
+	      text-align:left;
+	  }
+	  }
